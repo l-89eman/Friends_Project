@@ -1,0 +1,14 @@
+
+<div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <p ><%= render @friend %></p>
+        <p class="col-md-8 fs-4"></p>
+        <%= link_to "Edit ", edit_friend_path(@friend),class:"btn btn-dark" %> 
+          <%= link_to "Delete", @friend, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger " %>
+  <%= link_to "Back ", friends_path,class:"btn btn-dark" %>
+      </div>
+    </div>
+
+<div>
+
+</div>

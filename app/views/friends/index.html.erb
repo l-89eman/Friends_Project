@@ -1,0 +1,40 @@
+<% content_for :title, "Friends" %>
+<% if user_signed_in?%>
+<table class="table table-striped table-hover table-bordered">
+<thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+     <th ></th>
+      </tr>
+  </thead>
+ <tbody>
+    <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
+      <tr>
+        <td>
+         <%= link_to friend.first_name+" "+friend.last_name, friend,  style: "text-decoration: none;  color: black;" %> 
+        </td>
+        
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td>
+          <%= link_to "Delete", friend, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-outline-danger btn-sm" %>
+        </td>
+  
+      </tr>
+     <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Friend", new_friend_path, class: "btn btn-secondary" %>
+
+<% else %>
+<h1>Heading 1</h1>
+<p>This is my Ruby on Rails Project</p>
+
+<% end %>

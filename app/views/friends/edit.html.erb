@@ -1,0 +1,13 @@
+<% content_for :title, "Editing Friend" %>
+
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+<br>
+
+<div>
+  <%= link_to "Show ", @frien,class:"btn btn-dark" %> 
+   <%= link_to "Delete", @friend, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger " %>
+  <%= link_to "Back ", friends_path ,class:"btn btn-dark"%>
+</div>
